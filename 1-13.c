@@ -10,9 +10,8 @@ int main() {
     
     int c, STATE, wordnum = 0;
     //int wordsize[100] = {0};
-    int wordsize[100];
+    int wordsize[100]; // maximum characters in a word = 100;
     memset(wordsize, 0, sizeof wordsize);
-    wordsize[99] = 'A';
     int lastword = 1;
     // zero the array
     /* for (int i=0;i<=100;i++) {
@@ -22,24 +21,24 @@ int main() {
     while ((c = getchar()) != EOF) {
             if (c == '\n' || c == ' ' || c == '\t') {
                 STATE = OUT;
-                printf("\nentry: %d\n", wordsize[wordnum]);
-                printf("\nentry++: %d\n", wordsize[wordnum]++);
+               // printf("\nentry: %d\n", wordsize[wordnum]);
+               // printf("\nentry++: %d\n", wordsize[wordnum]++);
                 
                 wordsize[wordnum] = lastword;
                 lastword = 1;
-                printf("\nin whitespace land\n");
+               // printf("\nin whitespace land\n");
             } else if (STATE == OUT) {
                 // in a word!
                 STATE = IN;
                 wordnum++;
-                printf("\nentering word!\n");
+                //printf("\nentering word!\n");
             } else if (STATE == IN) {
                 lastword++;
             }
     }
    printf("c = %c",c);
    
-   printf("word size historgram:\n=============\n");
+   printf("\n\nword size historgram:\n=============\n");
    int histogram[50] = {0}; // max size 50
    // making histogram
    for (int d=0;d<30;d++) {
@@ -47,14 +46,17 @@ int main() {
         histogram[wordsize[d]]++;        
     }
 
+   printf("\nsize   |   number of words\n_________________________\n");
 
-   for (int i=0;i<=30;i++) {
-       printf("size   |   number of words");
-
-        for (int a=0;a<=10;a++) {
+   for (int i=1;i<=50;i++) {
+       if (histogram[i] > 0) {
+         printf("%d:",i);
+         for (int a=1;a<=histogram[i];a++) {
             printf("=");
+         }
+         printf("\n");
        }
-        printf("\nwordize entry = %d",wordsize[i]);
+       // printf("\nwordize entry = %d",wordsize[i]);
    }
    //printf("sizeof(wordsize) = %lu", sizeof(wordsize));
 
