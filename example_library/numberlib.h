@@ -1,7 +1,7 @@
 #ifndef _NUMBERLIB_H_
 #define _NUMBERLIB_H_
 
-    #define SO_MUCH_FUN 1;
+    #define SO_MUCH_FUN 1
     extern char michael[50];
     
     extern int vorbis(float x, float y);

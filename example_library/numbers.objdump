@@ -1,0 +1,94 @@
+
+numbers:     file format mach-o-x86-64
+numbers
+architecture: i386:x86-64, flags 0x00000012:
+EXEC_P, HAS_SYMS
+start address 0x0000000100000e40
+ MACH-O header:
+   magic:      0xfeedfacf
+   cputype:    0x1000007 (X86_64)
+   cpusubtype: 0x80000003 (LIB64) (X86_ALL)
+   filetype:   0x2
+   ncmds:      0xf
+   sizeocmds:  0x550
+   flags:      0x200085
+   version:    2
+
+Sections:
+Idx Name          Size      VMA               LMA               File off  Algn
+  0 .text         00000110  0000000100000e40  0000000100000e40  00000e40  2**4
+                  CONTENTS, ALLOC, LOAD, CODE
+  1 __TEXT.__stubs 00000012  0000000100000f50  0000000100000f50  00000f50  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 __TEXT.__stub_helper 0000002e  0000000100000f64  0000000100000f64  00000f64  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .cstring      00000018  0000000100000f92  0000000100000f92  00000f92  2**0
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  4 __TEXT.__unwind_info 00000048  0000000100000fac  0000000100000fac  00000fac  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  5 __DATA.__nl_symbol_ptr 00000010  0000000100001000  0000000100001000  00001000  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  6 __DATA.__got  00000008  0000000100001010  0000000100001010  00001010  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 __DATA.__la_symbol_ptr 00000018  0000000100001018  0000000100001018  00001018  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  8 .data         00000032  0000000100001030  0000000100001030  00001030  2**4
+                  CONTENTS, ALLOC, LOAD, DATA
+SYMBOL TABLE:
+0000000100000000 g       0f SECT   01 0010 [.text] __mh_execute_header
+0000000100000e40 g       0f SECT   01 0000 [.text] _main
+0000000100001030 g       0f SECT   09 0000 [.data] _michael
+0000000100000e70 g       0f SECT   01 0000 [.text] _vorbis
+0000000000000000 g       01 UND    00 0100 ___stack_chk_fail
+0000000000000000 g       01 UND    00 0100 ___stack_chk_guard
+0000000000000000 g       01 UND    00 0100 ___strcpy_chk
+0000000000000000 g       01 UND    00 0100 _printf
+0000000000000000 g       01 UND    00 0100 dyld_stub_binder
+
+
+Contents of section .text:
+ 100000e40 554889e5 4883ec10 0f57c0f3 0f1145f8  UH..H....W....E.
+ 100000e50 f30f1045 fcf30f10 4df8e811 00000031  ...E....M......1
+ 100000e60 c98945f4 89c84883 c4105dc3 90909090  ..E...H...].....
+ 100000e70 554889e5 4881eca0 00000048 8d351001  UH..H......H.5..
+ 100000e80 0000b832 00000089 c2488d7d 90488b0d  ...2.....H.}.H..
+ 100000e90 7c010000 488b0948 894df8f3 0f11458c  |...H..H.M....E.
+ 100000ea0 f30f114d 88e8ac00 0000488d 35ec0000  ...M......H.5...
+ 100000eb0 0041b832 00000044 89c2488d 4d904883  .A.2...D..H.M.H.
+ 100000ec0 c1324889 cf488945 80e88800 0000488d  .2H..H.E......H.
+ 100000ed0 3dd20000 00488d75 90488985 78ffffff  =....H.u.H..x...
+ 100000ee0 b000e875 00000048 8d3db900 0000488d  ...u...H.=....H.
+ 100000ef0 4d904883 c1324889 ce898574 ffffffb0  M.H..2H....t....
+ 100000f00 00e85600 0000488d 3d9a0000 00488d35  ..V...H.=....H.5
+ 100000f10 1c010000 898570ff ffffb000 e83b0000  ......p......;..
+ 100000f20 00488b0d e8000000 488b0948 8b55f848  .H......H..H.U.H
+ 100000f30 39d18985 6cffffff 0f850b00 000031c0  9...l.........1.
+ 100000f40 4881c4a0 0000005d c3e80200 00000f0b  H......]........
+Contents of section __TEXT.__stubs:
+ 100000f50 ff25c200 0000ff25 c4000000 ff25c600  .%.....%.....%..
+ 100000f60 0000                                 ..              
+Contents of section __TEXT.__stub_helper:
+ 100000f64 4c8d1d9d 00000041 53ff258d 00000090  L......AS.%.....
+ 100000f74 68000000 00e9e6ff ffff6818 000000e9  h.........h.....
+ 100000f84 dcffffff 682c0000 00e9d2ff ffff      ....h,........  
+Contents of section .cstring:
+ 100000f92 0a6e346d 33203d20 310a0067 346d3320  .n4m3 = 1..g4m3 
+ 100000fa2 3d20320a 00257300                    = 2..%s.        
+Contents of section __TEXT.__unwind_info:
+ 100000fac 01000000 1c000000 00000000 1c000000  ................
+ 100000fbc 00000000 1c000000 02000000 400e0000  ............@...
+ 100000fcc 34000000 34000000 510f0000 00000000  4...4...Q.......
+ 100000fdc 34000000 03000000 0c000100 10000100  4...............
+ 100000fec 00000000 00000001                    ........        
+Contents of section __DATA.__nl_symbol_ptr:
+ 100001000 00000000 00000000 00000000 00000000  ................
+Contents of section __DATA.__got:
+ 100001010 00000000 00000000                    ........        
+Contents of section __DATA.__la_symbol_ptr:
+ 100001018 740f0000 01000000 7e0f0000 01000000  t.......~.......
+ 100001028 880f0000 01000000                    ........        
+Contents of section .data:
+ 100001030 74686973 20697320 6d696368 61656c00  this is michael.
+ 100001040 00000000 00000000 00000000 00000000  ................
+ 100001050 00000000 00000000 00000000 00000000  ................
+ 100001060 0000                                 ..              
