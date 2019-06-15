@@ -2,21 +2,6 @@
 
 float celsiusconvert(float fahr);
 
-struct point { int x, y; };
-
-struct point p = { .y = 1, .x = 22};
-
-
-struct bdata {
-    int memstart;
-    float memend;
-    unsigned int mem;
-};
-
-
-
-struct bdata oi = { .memstart =  11, .memend = 22, };
-
 int main() {
     float fahr, celsius;
     int lower, upper, step;
