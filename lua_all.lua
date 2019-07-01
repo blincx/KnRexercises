@@ -90,7 +90,7 @@ end
 -- repeat until
 
 repeat
-    line = io.read()
+    line = "a" -- io.read()
 until line ~= ""
 print(line)
 
@@ -98,7 +98,7 @@ print(line)
 
 local i = 1
 while ab[i] do
-    print(a[i])
+    --print(a[i])
     i = i + 1
 end
 
@@ -106,7 +106,7 @@ print(nil == false) -- =false
 
 -- if then else ifelse
 
-aa = io.read()
+aa = "1" --  io.read()
 
 if aa == "1" then
     print("TOAST")
@@ -192,15 +192,49 @@ w = Window{ x=0, y=0, width=300, height=200, title = "Lua", background="blue", b
 --
 
 local function howdat()
-    print "Lua supports local functions!"
+    print "Lua supports local functions!\n"
 end
 
 howdat()
 
+-- error handling
+
+file,msg = io.open("cooks.txt","r")
+if not file then print(msg) end
+
+-- using assert
+
+--file = assert(io.open("not_a_file.txt","r")) -- throws an exception
+
+--assert(nil, "is nil false?") -- this throws an exception
+
+assert(howdat, "what?") -- this is not false, doesnt throw exception
+
+-- pcall is used for error handling
+-- it means 'protected call' 
+-- use pcall to encapsulate your code if you want error handling to not crash it
+--
 
 
+function breakable1()
+    return tonumber("x") .. 123 * sqrt(2)
+end
 
+print("\n")
+--error("This is an error!")
+print("\n")
 
+local ok, msg = pcall(breakable1)
+if ok then
+    print "it worked"
+    print(msg)
+    print(ok)
+else
+    print "it didnt work!"
+    print(msg)
+end
+
+print("however because we used pcall we still have program execution after this!")
 
 
 
